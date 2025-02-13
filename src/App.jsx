@@ -83,21 +83,21 @@ const App = () => {
 						onClick={() => setSelectedAnimal("basil")}
 						className="hover:bg-rose-300 bg-rose-400 text-white duration-200 p-1 rounded-lg"
 					>
-						<img width={60} src="./basil_icon.svg" alt="Basil Icon" />
+						<img src="./basil_icon.svg" alt="Basil Icon" />
 					</button>
 					<button
 						type="button"
 						onClick={() => setSelectedAnimal("cinamon")}
 						className="hover:bg-cyan-200 bg-cyan-300 text-white duration-200 p-1 rounded-lg"
 					>
-						<img width={60} src="./cinamon_icon.svg" alt="Cinamon Icon" />
+						<img src="./cinamon_icon.svg" alt="Cinamon Icon" />
 					</button>
 					<button
 						type="button"
 						onClick={() => setSelectedAnimal("gir")}
 						className="hover:bg-lime-200 bg-lime-300 text-white duration-200 p-1 rounded-lg"
 					>
-						<img width={60} src="./gir_icon.svg" alt="Gir Icon" />
+						<img src="./gir_icon.svg" alt="Gir Icon" />
 					</button>
 				</div>
 			</nav>
