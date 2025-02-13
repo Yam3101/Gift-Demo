@@ -39,8 +39,8 @@ const App = () => {
 		case "gir":
 			imageSrc = "./gir.svg";
 			finalImage = "./gir_final.svg";
-			backgroundColor = "bg-green-100";
-			shadowColor = "shadow-green-400";
+			backgroundColor = "bg-lime-100";
+			shadowColor = "shadow-lime-600";
 			buttonColor = "bg-lime-400 hover:bg-lime-500";
 			break;
 		default:
@@ -76,7 +76,7 @@ const App = () => {
 			className={`flex flex-col items-center justify-center h-screen w-screen overflow-x-hidden ${backgroundColor}`}
 		>
 			{/* Barra de selección */}
-			<nav className="absolute top-3 md:top-1">
+			<nav className="absolute top-4 md:top-2">
 				<div className="flex gap-1 bg-white/40 shadow-sm shadow-stone-500 p-2 rounded-lg animation-3">
 					<button
 						type="button"
