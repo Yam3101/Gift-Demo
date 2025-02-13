@@ -1,7 +1,4 @@
 import { useState } from "react";
-import ImageBasil from "./components/ImageBasil";
-import ImageCinamon from "./components/ImageCinamon";
-import ImageGir from "./components/ImageGir";
 
 const App = () => {
 	const [selectedAnimal, setSelectedAnimal] = useState("basil");
@@ -12,8 +9,8 @@ const App = () => {
 	// Frases para el botón "No"
 	const noButtonTexts = ["Are you sure?", "Really?", "Sureee?"];
 
-	// Definir qué componente mostrar y los colores según la elección
-	let ImageComponent;
+	// Definir la imagen a mostrar y los estilos según la elección
+	let imageSrc;
 	let finalImage;
 	let backgroundColor;
 	let shadowColor;
@@ -21,28 +18,28 @@ const App = () => {
 
 	switch (selectedAnimal) {
 		case "basil":
-			ImageComponent = <ImageBasil />;
+			imageSrc = "./basil.svg";
 			finalImage = "./basil_final.svg";
 			backgroundColor = "bg-rose-100";
 			shadowColor = "shadow-rose-400";
 			buttonColor = "bg-rose-500 hover:bg-rose-600";
 			break;
 		case "cinamon":
-			ImageComponent = <ImageCinamon />;
+			imageSrc = "./cinamon.svg";
 			finalImage = "./cinamon_final.svg";
 			backgroundColor = "bg-blue-100";
 			shadowColor = "shadow-blue-400";
 			buttonColor = "bg-blue-500 hover:bg-blue-600";
 			break;
 		case "gir":
-			ImageComponent = <ImageGir />;
+			imageSrc = "./gir.svg";
 			finalImage = "./gir_final.svg";
 			backgroundColor = "bg-green-100";
 			shadowColor = "shadow-green-400";
 			buttonColor = "bg-green-500 hover:bg-green-600";
 			break;
 		default:
-			ImageComponent = <ImageBasil />;
+			imageSrc = "./basil.svg";
 	}
 
 	// Función para cambiar el texto del botón "No"
@@ -67,27 +64,27 @@ const App = () => {
 		>
 			{/* Barra de selección */}
 			<nav className="absolute top-3 md:top-1">
-				<div className="flex gap-1 bg-white/40 shadow-sm shadow-stone-500 p-2 rounded-lg">
+				<div className="flex gap-1 bg-white/40 shadow-sm shadow-stone-500 p-2 rounded-lg animation-3">
 					<button
 						type="button"
 						onClick={() => setSelectedAnimal("basil")}
-						className="bg-rose-400 hover:bg-rose-300 text-white duration-200 p-1 rounded-lg"
+						className="hover:bg-rose-300 bg-rose-400 text-white duration-200 p-1 rounded-lg"
 					>
-						<img width={60} src="./basil_icon.svg" alt="imageIcon" />
+						<img width={60} src="./basil_icon.svg" alt="Basil Icon" />
 					</button>
 					<button
 						type="button"
 						onClick={() => setSelectedAnimal("cinamon")}
-						className="bg-blue-400 hover:bg-blue-300 text-white duration-200 p-1 rounded-lg"
+						className="hover:bg-cyan-200 bg-cyan-300 text-white duration-200 p-1 rounded-lg"
 					>
-						<img width={60} src="./cinamon_icon.svg" alt="imageIcon" />
+						<img width={60} src="./cinamon_icon.svg" alt="Cinamon Icon" />
 					</button>
 					<button
 						type="button"
 						onClick={() => setSelectedAnimal("gir")}
-						className="bg-green-400 hover:bg-green-300 text-white duration-200 p-1 rounded-lg"
+						className="hover:bg-lime-200 bg-lime-300 text-white duration-200 p-1 rounded-lg"
 					>
-						<img width={60} src="./gir_icon.svg" alt="imageIcon" />
+						<img width={60} src="./gir_icon.svg" alt="Gir Icon" />
 					</button>
 				</div>
 			</nav>
@@ -98,7 +95,7 @@ const App = () => {
 					className={`bg-white shadow-md ${shadowColor} patrick-hand py-4 sm:px-32 px-5 rounded-md animation-main-cont`}
 				>
 					<div className="flex flex-col items-center">
-						{/* Mostrar la imagen final o el contenido normal */}
+						{/* Mostrar la imagen final o la imagen normal */}
 						{showFinalImage ? (
 							<img width={200} src={finalImage} alt="Final Choice" />
 						) : (
@@ -107,7 +104,7 @@ const App = () => {
 									Would you like to be <br /> my{" "}
 									<span className="font-bold">valentine</span>?
 								</h1>
-								{ImageComponent}
+								<img width={200} src={imageSrc} alt="Selected Animal" />
 							</>
 						)}
 					</div>

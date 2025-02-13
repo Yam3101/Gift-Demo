@@ -46,3 +46,7 @@
 .animation-2 {
   animation: animation-1 1.8s;
 }
+
+.animation-3 {
+  animation: animation-1 0.7s;
+}
