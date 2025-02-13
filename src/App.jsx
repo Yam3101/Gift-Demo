@@ -4,7 +4,7 @@ const App = () => {
 	return (
 		<main className="flex flex-col items-center justify-center h-screen w-screen overflow-x-hidden">
 			<section className="flex flex-col items-center justify-center text-center">
-				<article className="w-92 bg-rose-100 shadow-md shadow-rose-400 patrick-hand py-4 rounded-md">
+				<article className="w-92 bg-rose-100 shadow-md shadow-rose-400 patrick-hand py-4 rounded-md animation-main-cont">
 					<div>
 						<h1 className="text-xl font-semibold figtree uppercase tracking-tight">
 							Would you like to be <br /> my{" "}
@@ -15,13 +15,13 @@ const App = () => {
 					<div className="flex flex-wrap justify-center items-center gap-2">
 						<button
 							type="button"
-							className="bg-rose-500 hover:bg-rose-600 text-white hover:cursor-pointer text-xl font-medium w-28 rounded-3xl py-1 duration-300"
+							className="bg-rose-500 hover:bg-rose-600 text-white hover:cursor-pointer text-xl font-medium w-28 rounded-3xl py-1 duration-300 animation-1"
 						>
 							Yes
 						</button>
 						<button
 							type="button"
-							className="bg-rose-500 hover:bg-rose-600 text-white hover:cursor-pointer text-xl font-medium w-28 rounded-3xl py-1 duration-300"
+							className="bg-rose-500 hover:bg-rose-600 text-white hover:cursor-pointer text-xl font-medium w-28 rounded-3xl py-1 duration-300 animation-2"
 						>
 							No
 						</button>

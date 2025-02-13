@@ -23,3 +23,26 @@
 .figtree {
   font-family: "Figtree"
 }
+
+@keyframes animation-1 {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animation-main-cont {
+  animation: animation-1 1.5s;
+}
+
+.animation-1 {
+  animation: animation-1 1s;
+}
+
+.animation-2 {
+  animation: animation-1 1.8s;
+}
