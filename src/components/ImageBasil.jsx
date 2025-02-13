@@ -1,7 +1,7 @@
 const imageBasil = () => {
 	return (
 		<div>
-			<img src="" alt="basil" />
+			<img src="./basil.svg" alt="basil" />
 		</div>
 	);
 };

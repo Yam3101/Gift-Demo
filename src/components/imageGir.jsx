@@ -1,7 +1,7 @@
 const imageGir = () => {
 	return (
 		<div>
-			<img src="" alt="gir" />
+			<img src="./gir.svg" alt="gir" />
 		</div>
 	);
 };

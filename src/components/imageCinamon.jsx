@@ -1,5 +1,5 @@
 const imageCinamon = () => {
-	return <img src="" alt="cinamon" />;
+	return <img src="./cinamon.svg" alt="cinamon" />;
 };
 
 export default imageCinamon;
