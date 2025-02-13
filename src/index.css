@@ -1,1 +1,25 @@
-@Import "tailwindcss";
+@import "tailwindcss";
+
+:root {
+  background-image: linear-gradient(to top, #ffccd3, #ff80b0);
+}
+
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("../fonts/PatrickHand-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+.patrick-hand {
+  font-family: "Patrick Hand"
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("../fonts/Figtree-VariableFont_wght.woff2") format("woff2");
+  font-display: swap;
+}
+
+.figtree {
+  font-family: "Figtree"
+}
