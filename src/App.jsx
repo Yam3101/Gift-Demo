@@ -1,13 +1,18 @@
 import { useState } from "react";
+import confetti from "canvas-confetti";
 
 const App = () => {
 	const [selectedAnimal, setSelectedAnimal] = useState("basil");
 	const [noClickCount, setNoClickCount] = useState(0);
 	const [showFinalImage, setShowFinalImage] = useState(false);
 	const [noButtonText, setNoButtonText] = useState("No");
+	const [showCelebrationText, setShowCelebrationText] = useState(false);
 
 	// Frases para el botón "No"
 	const noButtonTexts = ["Are you sure?", "Really?", "Sureee?"];
+
+	// Frases de celebración
+	const celebrationPhrases = ["Yayyy!!! 💖", "THANK YOUU! 🎉"];
 
 	// Definir la imagen a mostrar y los estilos según la elección
 	let imageSrc;
@@ -29,14 +34,14 @@ const App = () => {
 			finalImage = "./cinamon_final.svg";
 			backgroundColor = "bg-blue-100";
 			shadowColor = "shadow-blue-400";
-			buttonColor = "bg-blue-500 hover:bg-blue-600";
+			buttonColor = "bg-cyan-400 hover:bg-cyan-500";
 			break;
 		case "gir":
 			imageSrc = "./gir.svg";
 			finalImage = "./gir_final.svg";
 			backgroundColor = "bg-green-100";
 			shadowColor = "shadow-green-400";
-			buttonColor = "bg-green-500 hover:bg-green-600";
+			buttonColor = "bg-lime-400 hover:bg-lime-500";
 			break;
 		default:
 			imageSrc = "./basil.svg";
@@ -56,6 +61,14 @@ const App = () => {
 	// Función al hacer clic en "Sí"
 	const handleYesClick = () => {
 		setShowFinalImage(true);
+		setShowCelebrationText(true);
+
+		// Mostrar confeti
+		confetti({
+			particleCount: 150,
+			spread: 90,
+			origin: { y: 0.6 },
+		});
 	};
 
 	return (
@@ -97,7 +110,19 @@ const App = () => {
 					<div className="flex flex-col items-center">
 						{/* Mostrar la imagen final o la imagen normal */}
 						{showFinalImage ? (
-							<img width={200} src={finalImage} alt="Final Choice" />
+							<>
+								<img width={200} src={finalImage} alt="Final Choice" />
+								{/* Mostrar frase de celebración */}
+								{showCelebrationText && (
+									<p className="text-2xl figtree font-black mt-4 text-black">
+										{
+											celebrationPhrases[
+												Math.floor(Math.random() * celebrationPhrases.length)
+											]
+										}
+									</p>
+								)}
+							</>
 						) : (
 							<>
 								<h1 className="text-xl font-semibold figtree uppercase tracking-tight">
